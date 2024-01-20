@@ -1,8 +1,20 @@
-[package]
-name = "palm"
-version = "0.1.0"
+[workspace.package]
+authors = ["clara contributors"]
+description = "Zksync light client"
+documentation = "https://docs.rs/palm.rs"
 edition = "2021"
+homepage = "https://github.com/lbkolev/clara"
+license = "MIT OR Apache-2.0"
+version = "0.0.1"
+rust-version = "1.75.0"
+readme = "README.md"
+repository = "https://github.com/lbkolev/clara"
 
-# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+[workspace]
+members = [
+    "crates/clara",
+    "crates/api"
+]
 
-[dependencies]
+[workspace.dependencies]
+jsonrpsee = { version = "0.21.0", features = ["full"] }
