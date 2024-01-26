@@ -1,7 +1,8 @@
-[workspace.package]
-authors = ["clara contributors"]
+[package]
+name = "clara"
+authors = ["Lachezar Kolev <lachezarkolevgg@gmail.com>"]
 description = "Zksync light client"
-documentation = "https://docs.rs/palm.rs"
+documentation = "https://docs.rs/clara.rs"
 edition = "2021"
 homepage = "https://github.com/lbkolev/clara"
 license = "MIT OR Apache-2.0"
@@ -10,11 +11,12 @@ rust-version = "1.75.0"
 readme = "README.md"
 repository = "https://github.com/lbkolev/clara"
 
-[workspace]
-members = [
-    "crates/clara",
-    "crates/api"
-]
-
-[workspace.dependencies]
+[dependencies]
+anyhow = "1.0.79"
+async-trait = "0.1.77"
+bigdecimal = { version = "0.4.2", features = ["serde"] }
 jsonrpsee = { version = "0.21.0", features = ["full"] }
+thiserror = "1.0.56"
+tokio = { version = "1.35.1", features = ["full"] }
+zksync_types = { git = "https://github.com/matter-labs/zksync-era", tag = "core-v20.0.0" }
+zksync_web3_decl = { git = "https://github.com/matter-labs/zksync-era", tag = "core-v20.0.0", features = ["server", "client"] }
